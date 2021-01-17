@@ -1,9 +1,9 @@
 import { LitElement, html, customElement, property, css } from 'lit-element';
 
 export enum MapLayerType {
-    TileLayer = 0,
-    ImageLayer,
-  };
+  TileLayer = 0,
+  ImageLayer,
+};
 
 @customElement('map-layer')
 export class MapLayer extends LitElement {
@@ -20,8 +20,13 @@ export class MapLayer extends LitElement {
   @property({ type: Number })
   layerType = 0;
 
-  @property({ type: Array })
-  layerData = [];
+  @property({ type: Number })
+  width = 0;
+
+  @property({ type: Number })
+  height = 0;
+
+  // parallax value
   
   render() {
     return html``;

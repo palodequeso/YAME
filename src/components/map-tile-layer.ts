@@ -1,5 +1,5 @@
 import { html, customElement, property, css } from 'lit-element';
-import { MapLayer } from './map-layer';
+import { MapLayer, MapLayerType } from './map-layer';
 import { MapTile } from './map-tile';
 
 @customElement('map-tile-layer')
@@ -15,6 +15,14 @@ export class MapTileLayer extends MapLayer {
 
   @property({ type: Number })
   tileHeight = 0;
+
+  @property({ type: Array })
+  layerData = [];
+
+  constructor() {
+    super();
+    this.layerType = MapLayerType.TileLayer;
+  }
 
   render() {
     return html`
